@@ -16,15 +16,17 @@ Please see this article [article](http://www.mkyong.com/maven/how-to-install-mav
 
     Go to the root of your project in the terminal and type:
 
-    mvn install
-    After you see Build Successful, type in :
-
+    mvn clean
+    
+    After you see Build Successful and All Tests are passed type:
+    
     mvn package
     
-    After you see Package Successful, goto target folder and type. 
+    After you see Package Successful, goto <target> folder and type. 
 
-	java -jar  audit-reporter-1.0-SNAPSHOT-jar-with-dependencies users.csv files.csv 
-
+	java -jar  audit-reporter.jar data/users.csv data/files.csv
+	
+	You can give full path for users and files input.
 
 Example output:
 
@@ -43,12 +45,11 @@ Options
 ---------
 
 ### CSV Output
-You can report - *CSV output format and *TOP #n files report*.
+You can report - *CSV output format*.
     
-    java -jar  audit-reporter-1.0-SNAPSHOT-jar-with-dependencies users.csv files.csv -c
+    java -jar  audit-reporter.jar data/users.csv data/files.csv -c
 
-
-When run with `-c` flag print the report in csv instead of plain text:
+Example output:
 
 	jpublic,audit.xlsx,1638232
 	jpublic,movie.avi,734003200
@@ -60,10 +61,9 @@ When run with `-c` flag print the report in csv instead of plain text:
 ### TOP #n files
 You can report *TOP #n files*.
 
-    java -jar  audit-reporter-1.0-SNAPSHOT-jar-with-dependencies users.csv files.csv --topN 3
+    java -jar  audit-reporter.jar data/users.csv data/files.csv --topN 3
 
-When run with `--top n` should print n-largest files sorted by size, e.g., `--top 3`:
-
+Example output:
 
 	movie.avi,jpublic,734003200
     pic.jpg,atester,5372274

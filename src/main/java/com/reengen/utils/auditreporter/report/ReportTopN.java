@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeSet;
 
+/**
+ * Created by Canan Girgin on 14.02.2017.
+ */
 // Prepares topN (size) files report
 public class ReportTopN extends ReportService {
 

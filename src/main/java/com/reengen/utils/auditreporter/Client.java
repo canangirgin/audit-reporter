@@ -8,21 +8,31 @@ import org.apache.commons.cli.*;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Reporter {
+/**
+ * Created by Canan Girgin on 14.02.2017.
+ */
+public class Client {
     public static final Properties properties = new Properties();
     private final static String propFileName = "config.properties";
     private static int topN = 0;
     private static String fileType = "txt";
 
     public static void main(final String[] args) throws IOException, ParseException {
+        loadClientProperties();
+
         final Options options = new Options();
         options.addOption("c", false, "CSV format"); // does not have a value
         options.addOption("topN", true, "Top N Record"); // has a value
         parseArgs(args, options);
         final ReportService reportService = ReportFactory.getReportService(topN);
-        FileUtil.getProperties(propFileName);
-        reportService.loadData(args[0], args[1]);
+        final String userFilePath = args[0];
+        final String filesFilePath = args[1];
+        reportService.loadData(userFilePath, filesFilePath);
         reportService.generateReport(fileType);
+    }
+
+    private static void loadClientProperties() throws IOException {
+        FileUtil.getProperties(propFileName);
     }
 
     private static void parseArgs(final String[] args, final Options options) throws ParseException {

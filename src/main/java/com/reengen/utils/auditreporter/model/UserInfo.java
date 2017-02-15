@@ -1,4 +1,7 @@
 package com.reengen.utils.auditreporter.model;
+/**
+ * Created by Canan Girgin on 14.02.2017.
+ */
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +34,6 @@ public class UserInfo {
     }
 
     public List<FileInfo> getFiles() {
-        if (this.files == null) this.files = new ArrayList<>();
         return this.files;
     }
 
@@ -40,6 +42,7 @@ public class UserInfo {
     }
 
     public void addFile(final FileInfo fileInfo) {
+        if (this.files == null) this.files = new ArrayList<>();
         this.files.add(fileInfo);
     }
 }

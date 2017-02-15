@@ -1,5 +1,8 @@
 package com.reengen.utils.auditreporter.model;
 
+/**
+ * Created by Canan Girgin on 14.02.2017.
+ */
 //Model class for Files
 public class FileInfo {
     private final String name;

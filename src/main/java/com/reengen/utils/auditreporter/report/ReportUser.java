@@ -6,6 +6,9 @@ import com.reengen.utils.auditreporter.model.UserInfo;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Created by Canan Girgin on 14.02.2017.
+ */
 // Prepares users files report
 public class ReportUser extends ReportService {
     @Override
