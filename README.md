@@ -10,9 +10,9 @@ the utility like this:
     
     Install Maven .
 
-    Please see this article article on installing Maven.
+Please see this article [article](http://www.mkyong.com/maven/how-to-install-maven-in-windows/) on installing Maven.
 
-    Read this on getting up to speed with Maven
+	Read this on getting up to speed with [Maven](http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
 
     Go to the root of your project in the terminal and type:
 
